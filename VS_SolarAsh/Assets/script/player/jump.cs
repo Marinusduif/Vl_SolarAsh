@@ -7,13 +7,12 @@ public class jump : MonoBehaviour
     Rigidbody rb;
     [SerializeField] private int jumps;
     [SerializeField] private float jump_height;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(jumps > 0 && Input.GetKeyDown(KeyCode.Space))

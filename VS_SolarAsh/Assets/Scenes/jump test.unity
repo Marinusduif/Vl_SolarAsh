@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumps: 1
-  jump_height: 500
+  jump_height: 300
 --- !u!54 &1832253587
 Rigidbody:
   m_ObjectHideFlags: 0
