@@ -18,8 +18,16 @@ public class jump : MonoBehaviour
     {
         if(jumps > 0 && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = transform.up * 0;
-            rb.AddForce(transform.up * jump_height);
+            if (jumps == 2)
+            {
+                rb.velocity = transform.up * 0;
+                rb.AddForce(transform.up * jump_height);
+            }
+            else
+            {
+                rb.velocity = transform.up * 0;
+                rb.AddForce(transform.up * jump_height / 2);
+            }
             jumps -= 1;
         }
     }
