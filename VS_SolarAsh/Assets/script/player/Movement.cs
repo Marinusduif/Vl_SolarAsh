@@ -18,8 +18,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(Camera.main.transform.forward);
-
         float move = Time.deltaTime * speed * Input.GetAxis("Vertical");
         Vector3 lastVel = rb.velocity;
         Vector3 newVel = Vector3.zero;
