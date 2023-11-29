@@ -9,6 +9,8 @@ public class movement2 : MonoBehaviour
 
     public float speed = 6f;
 
+    [SerializeField] private float sprintMulti = 2f;
+
     public float TurnSpeed = 0.1f;
 
     private float TurnSpeedVelocity;
@@ -28,8 +30,11 @@ public class movement2 : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 walkDir = Quaternion.Euler(0f, PlayerAngle, 0f) * Vector3.forward;
-            controller.Move(walkDir.normalized * speed * Time.deltaTime);
-        }
 
+            if (Input.GetKey(KeyCode.LeftShift)) controller.Move(walkDir.normalized * speed * sprintMulti *  Time.deltaTime);
+
+            else controller.Move(walkDir.normalized * speed * Time.deltaTime);
+
+        }
     }
 }
