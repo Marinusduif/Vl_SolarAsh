@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 50f;
+    [SerializeField] private float sprintMult = 2f;
     [SerializeField] private float rotSpeed = 50f;
     private Rigidbody rb;
 
@@ -15,16 +16,24 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
-        Debug.Log(Camera.main.transform.forward);
-
-        float move = Time.deltaTime * speed * Input.GetAxis("Vertical");
+        float move = speed * Input.GetAxis("Vertical");
         Vector3 lastVel = rb.velocity;
-        Vector3 newVel = rb.transform.forward * move; 
+        Vector3 newVel = Vector3.zero;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            newVel = rb.transform.forward * move * sprintMult * Time.deltaTime;
+        }
+        else
+        {
+            newVel = rb.transform.forward * move * Time.deltaTime;
+        }
         newVel.y = lastVel.y;
         rb.velocity = newVel;
         float rot = Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
         rb.transform.Rotate(new Vector3(0, rot, 0));
     }
+
+    
 }
