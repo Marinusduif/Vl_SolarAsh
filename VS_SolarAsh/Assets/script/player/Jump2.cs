@@ -11,18 +11,21 @@ public class Jump2 : MonoBehaviour
     public LayerMask groundMask;
     public float jumpHeight = 3f;
 
-    bool isGrounded;
+    [SerializeField] private bool isGrounded;
     int jumpsMade = 0;
 
     Vector3 velocity;
 
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        RaycastHit hit;
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, groundDistance, groundMask);
+        Debug.Log(Physics.Raycast(transform.position, Vector3.down, groundDistance, groundMask));
+        Debug.DrawRay(transform.position, Vector3.down, Color.red, groundDistance);
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f;
+            velocity.y = -10f;
             jumpsMade = 0; // Reset jumps when grounded
         }
 
@@ -43,4 +46,3 @@ public class Jump2 : MonoBehaviour
         }
     }
 }
-
