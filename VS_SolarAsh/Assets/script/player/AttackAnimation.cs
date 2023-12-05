@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AttackAnimation : MonoBehaviour
 {
@@ -14,7 +11,7 @@ public class AttackAnimation : MonoBehaviour
 
     private void Update()
     {
-        
+
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             ani.SetTrigger("Attack");
