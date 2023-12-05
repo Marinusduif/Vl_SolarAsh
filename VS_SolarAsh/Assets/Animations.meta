@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:VS_SolarAsh/Assets/scripts.meta
+<<<<<<< HEAD
+guid: 4567ba2bb9af87a4fbac498f398a53db
+=======
 <<<<<<<< Updated upstream:VS_SolarAsh/Assets/scripts.meta
-guid: c91e18d2f27a56c4ab7cea60ef60de44
+guid: 599a490c3aa5b43419966466b46ef3f7
 ========
 guid: 91082d4d5638b9544b61de5317460390
 >>>>>>>> Stashed changes:VS_SolarAsh/Assets/Animations.meta
-=======
-guid: 50dea365e8157fe40af6ae0504f4ce8f
->>>>>>> c7184d39418e05bfda2612ad84cc00c6a054dd67:VS_SolarAsh/Assets/Polybrush Data.meta
+>>>>>>> d31480c425011055a09717932b6e805c34a1d989
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
