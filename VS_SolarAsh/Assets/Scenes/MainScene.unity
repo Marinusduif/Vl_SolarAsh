@@ -9897,11 +9897,12 @@ MonoBehaviour:
   characterController: {fileID: 1460762742}
   grav: -10.63
   groundCheck: {fileID: 88137458}
-  groundDistance: 0.4
+  groundDistance: 1.5
   groundMask:
     serializedVersion: 2
     m_Bits: 8
   jumpHeight: 2
+  isGrounded: 0
 --- !u!114 &1460762741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10023,7 +10024,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470479886}
-  m_LocalRotation: {x: 0.06632616, y: 0.00660127, z: -0.0004388129, w: 0.9977761}
+  m_LocalRotation: {x: 0.066326156, y: 0.00660127, z: -0.0004388128, w: 0.9977761}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
