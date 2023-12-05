@@ -6,17 +6,26 @@ using UnityEngine;
 public class AttackAnimation : MonoBehaviour
 {
     [SerializeField] private Animator ani;
-    void Start()
+
+    private void Start()
     {
         ani = GetComponent<Animator>();
     }
-    void Update()
+
+    private void Update()
     {
-        ani.SetTrigger("Idle");
-        if(Input.GetKeyUp(KeyCode.Mouse0))
+        
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             ani.SetTrigger("Attack");
         }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            ani.SetTrigger("Walking");
+        }
+        else
+        {
+            ani.SetTrigger("Idle");
+        }
     }
-    
 }
