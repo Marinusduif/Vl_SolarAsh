@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class movement2 : MonoBehaviour
 {
-   public CharacterController controller;
+    public CharacterController controller;
     public Transform cam;
 
     public float speed = 6f;
@@ -31,7 +29,7 @@ public class movement2 : MonoBehaviour
 
             Vector3 walkDir = Quaternion.Euler(0f, PlayerAngle, 0f) * Vector3.forward;
 
-            if (Input.GetKey(KeyCode.LeftShift)) controller.Move(walkDir.normalized * speed * sprintMulti *  Time.deltaTime);
+            if (Input.GetKey(KeyCode.LeftShift)) controller.Move(walkDir.normalized * speed * sprintMulti * Time.deltaTime);
 
             else controller.Move(walkDir.normalized * speed * Time.deltaTime);
 
