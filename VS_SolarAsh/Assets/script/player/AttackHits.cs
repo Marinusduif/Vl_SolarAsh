@@ -2,13 +2,26 @@
 
 public class AttackHits : MonoBehaviour
 {
-    [SerializeField] private string targetTag;
+    [SerializeField] private GameObject box;
+    [SerializeField] private bool hit = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == targetTag)
+        if (other.gameObject == box)
         {
-            Destroy(other.gameObject);
+            hit = true;
+        }
+        else
+        {
+            hit = false;
+        }
+    }
+
+    public void DestroyBox()
+    {
+        if (hit == true)
+        {
+            Destroy(box);
         }
     }
 }
