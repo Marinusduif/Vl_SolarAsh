@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AttackHit : MonoBehaviour
+public class AttackHits : MonoBehaviour
 {
     [SerializeField] private GameObject box;
     [SerializeField] private bool hit = false;
