@@ -13,7 +13,6 @@ public class GoopCollect : MonoBehaviour
         {
             goopAmount++;
             GoopCount.text = goopAmount.ToString();
-            Debug.Log(goopAmount);
             Destroy(other.gameObject);
 
 
