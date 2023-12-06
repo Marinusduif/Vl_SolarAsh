@@ -21,7 +21,6 @@ public class AttackHits : MonoBehaviour
     {
         if (hit == true)
         {
-            Debug.Log("Hello");
             Destroy(box);
         }
     }
