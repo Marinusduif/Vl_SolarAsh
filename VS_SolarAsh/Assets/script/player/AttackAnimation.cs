@@ -4,11 +4,11 @@ public class AttackAnimation : MonoBehaviour
 {
     [SerializeField] private Animator ani;
 
-    [SerializeField] private AttackHit attack;
+    [SerializeField] private AttackHits attack;
     void Start()
     {
         ani = GetComponent<Animator>();
-        attack = GetComponent<AttackHit>();
+        attack = GetComponent<AttackHits>();
     }
 
     private void Update()
