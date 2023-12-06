@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class AttackHit : MonoBehaviour
+public class AttackHits : MonoBehaviour
 {
     [SerializeField] private string targetTag;
 
@@ -10,7 +8,7 @@ public class AttackHit : MonoBehaviour
     {
         if (other.gameObject.tag == targetTag)
         {
-            GameObject.Destroy(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }
