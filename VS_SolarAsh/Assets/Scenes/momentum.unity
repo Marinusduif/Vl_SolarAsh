@@ -2877,11 +2877,12 @@ MonoBehaviour:
   characterController: {fileID: 463257427}
   grav: -10.63
   groundCheck: {fileID: 469399828}
-  groundDistance: 0.15
+  groundDistance: 1.5
   groundMask:
     serializedVersion: 2
     m_Bits: 8
   jumpHeight: 2
+  isGrounded: 0
 --- !u!1001 &464069241
 PrefabInstance:
   m_ObjectHideFlags: 0

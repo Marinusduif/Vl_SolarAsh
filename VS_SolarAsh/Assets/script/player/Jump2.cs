@@ -16,10 +16,7 @@ public class Jump2 : MonoBehaviour
 
     void Update()
     {
-        RaycastHit hit;
         isGrounded = Physics.Raycast(transform.position, Vector3.down, groundDistance, groundMask);
-        Debug.Log(Physics.Raycast(transform.position, Vector3.down, groundDistance, groundMask));
-        Debug.DrawRay(transform.position, Vector3.down, Color.red, groundDistance);
 
         if (isGrounded && velocity.y < 0)
         {
@@ -38,7 +35,7 @@ public class Jump2 : MonoBehaviour
             }
             else
             {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * grav);
+                velocity.y = Mathf.Sqrt(jumpHeight * -1f * grav);
                 jumpsMade++;
             }
         }
