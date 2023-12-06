@@ -1,28 +1,33 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AttackHits : MonoBehaviour
 {
-    [SerializeField] private GameObject box;
-    [SerializeField] private bool hit = false;
+    [SerializeField] private string TargetTag;
+    private bool canHit = false;
 
-    private void OnTriggerEnter(Collider other)
+
+    private void Start()
     {
-        if (other.gameObject == box)
+        Test.attackEvent += CheckHitState;
+    }
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.tag == TargetTag && canHit)
         {
-            hit = true;
-        }
-        else
-        {
-            hit = false;
+            Destroy(coll.gameObject);
         }
     }
 
-    public void DestroyBox()
+    private void CheckHitState(int state)
     {
-        if (hit == true)
+        if (state == 1)
         {
-            Debug.Log("Hello");
-            Destroy(box);
+            canHit = true;
         }
+        else
+        {
+            canHit = false;
+        }
+
     }
 }
