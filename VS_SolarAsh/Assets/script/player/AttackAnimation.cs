@@ -1,20 +1,23 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class AttackAnimation : MonoBehaviour
 {
     [SerializeField] private Animator ani;
 
-    private void Start()
+    [SerializeField] private AttackHit attack;
+    void Start()
     {
         ani = GetComponent<Animator>();
+        attack = GetComponent<AttackHit>();
     }
 
     private void Update()
     {
-
+        ani.SetTrigger("Idle");
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             ani.SetTrigger("Attack");
+            attack.DestroyBox();
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
@@ -25,4 +28,5 @@ public class AttackAnimation : MonoBehaviour
             ani.SetTrigger("Idle");
         }
     }
+
 }
