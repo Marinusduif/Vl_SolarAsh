@@ -1,8 +1,10 @@
+﻿using Cinemachine;
 using UnityEngine;
 
 public class movement2 : MonoBehaviour
 {
     public CharacterController controller;
+    public CinemachineFreeLook virtualCamera;
     public Transform cam;
 
     public float speed = 6f;
@@ -24,12 +26,23 @@ public class movement2 : MonoBehaviour
         if (derection.magnitude >= 0.1f)
         {
             float PlayerAngle = Mathf.Atan2(derection.x, derection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, PlayerAngle, ref TurnSpeedVelocity, TurnSpeed);
+            virtualCamera.m_Lens.FieldOfView = 60;
+
+            float angle = 0f;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, PlayerAngle, ref TurnSpeedVelocity, TurnSpeed * 3);
+                virtualCamera.m_Lens.FieldOfView = 70;
+            }
+            else
+            {
+                angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, PlayerAngle, ref TurnSpeedVelocity, TurnSpeed);
+            }
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 walkDir = Quaternion.Euler(0f, PlayerAngle, 0f) * Vector3.forward;
 
-            if (Input.GetKey(KeyCode.LeftShift)) controller.Move(walkDir.normalized * speed * sprintMulti * Time.deltaTime);
+            if (Input.GetKey(KeyCode.LeftShift)) controller.Move(transform.forward * speed * sprintMulti * Time.deltaTime);
 
             else controller.Move(walkDir.normalized * speed * Time.deltaTime);
 
