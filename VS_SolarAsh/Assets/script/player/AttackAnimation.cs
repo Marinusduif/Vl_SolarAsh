@@ -1,11 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AttackAnimation : MonoBehaviour
 {
     [SerializeField] private Animator ani;
     [SerializeField] private AttackHits hit;
-
-    [SerializeField] private AttackHit attack;
     void Start()
     {
         ani = GetComponent<Animator>();
