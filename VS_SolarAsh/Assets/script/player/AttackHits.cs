@@ -28,15 +28,5 @@ public class AttackHits : MonoBehaviour
         {
             canHit = false;
         }
-
-<<<<<<< HEAD
-=======
-    public void DestroyBox()
-    {
-        if (hit == true)
-        {
-            Destroy(box);
-        }
->>>>>>> 0eecaefa56e79caa0d6bdd2b696b45e214c796a0
     }
 }
