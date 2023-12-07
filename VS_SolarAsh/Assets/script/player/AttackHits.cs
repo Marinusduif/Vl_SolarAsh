@@ -10,7 +10,7 @@ public class AttackHits : MonoBehaviour
     {
         Test.attackEvent += CheckHitState;
     }
-    private void OnCollisionEnter(Collision coll)
+    private void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == TargetTag && canHit)
         {
