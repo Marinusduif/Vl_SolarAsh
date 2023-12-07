@@ -5,15 +5,16 @@ public class AttackHits : MonoBehaviour
     [SerializeField] private string TargetTag;
     private bool canHit = false;
 
-
     private void Start()
     {
         Test.attackEvent += CheckHitState;
     }
+
     private void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == TargetTag && canHit)
         {
+            coll.gameObject.GetComponent<GoopOutOfBox>().ExplodeGloobs();
             Destroy(coll.gameObject);
         }
     }
