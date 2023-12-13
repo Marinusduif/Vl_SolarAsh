@@ -2786,6 +2786,7 @@ GameObject:
   - component: {fileID: 463257427}
   - component: {fileID: 463257426}
   - component: {fileID: 463257429}
+  - component: {fileID: 463257430}
   m_Layer: 6
   m_Name: player
   m_TagString: Untagged
@@ -2826,7 +2827,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463257419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a420abfe90d3fc45bc4cf1b5b001a0f, type: 3}
   m_Name: 
@@ -2883,6 +2884,27 @@ MonoBehaviour:
     m_Bits: 8
   jumpHeight: 2
   isGrounded: 0
+--- !u!114 &463257430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463257419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2e6e5378ec6ff49a2e7556a00a915c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momentum: 0
+  maxWalkSpeed: 7
+  maxSkateSpeed: 10
+  decelerateSpeed: 10
+  accelerateSpeed: 5
+  TurnSpeed: 0.1
+  TurnSpeedVelocity: 0
+  controller: {fileID: 463257427}
+  cam: {fileID: 545132814}
 --- !u!1001 &464069241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5638,8 +5660,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831235874}
-  m_LocalRotation: {x: 0.108489566, y: 0.000000015215475, z: -0.0000000016605212,
-    w: 0.9940976}
+  m_LocalRotation: {x: 0.10848954, y: -0.000000021235405, z: 0.0000000023174982, w: 0.9940976}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
