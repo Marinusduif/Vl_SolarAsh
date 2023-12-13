@@ -2,45 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump2 : MonoBehaviour
+public class jump2 : MonoBehaviour
 {
-    public CharacterController characterController;
-    public float grav = -9.81f;
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-    public float jumpHeight = 3f;
-
-    bool isGrounded;
-    int jumpsMade = 0;
-
-    Vector3 velocity;
+    CharacterController controller;
+    [SerializeField] private float gravity = 9.807f;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float jumpDecrese = 0.5f;
+    [SerializeField] private int jumps;
+    [SerializeField] private float downVel;
+    [SerializeField] private bool jumping;
+    [SerializeField]private bool onGround;
+    void Start()
+    {
+        controller = GetComponent<CharacterController>();
+    }
 
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.5f, LayerMask.GetMask("isGround"))) onGround = true;
+        else onGround = false;
 
-        if (isGrounded && velocity.y < 0)
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+
+        if (!onGround)
         {
-            velocity.y = -2f;
-            jumpsMade = 0; // Reset jumps when grounded
+            downVel -= Time.deltaTime * gravity;
         }
 
-        velocity.y += grav * Time.deltaTime;
-        characterController.Move(velocity * Time.deltaTime);
-
-        if (Input.GetButtonDown("Jump") && (isGrounded || jumpsMade < 1))
+        if (onGround) 
         {
-            if (isGrounded)
+            jumps = 2;
+        } 
+        else if (!jumping || jumps > 1)
+        {
+            downVel = -0.5f;
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * grav);
-            }
-            else
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * grav);
-                jumpsMade++;
+                jumps--;
+                downVel = jumpHeight;
+                StartCoroutine(Jump());
             }
         }
+        controller.Move(transform.up * downVel);
+    }
+    private IEnumerator Jump()
+    {
+        jumping = true;
+        yield return new WaitForSeconds(0.5f);
+        jumping = false;
     }
 }
-
