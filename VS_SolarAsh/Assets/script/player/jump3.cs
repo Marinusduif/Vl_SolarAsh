@@ -20,7 +20,7 @@ public class jump3 : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -10f;
+            velocity.y = -5f;
             jumpsMade = 0; // Reset jumps when grounded
         }
 
@@ -39,9 +39,9 @@ public class jump3 : MonoBehaviour
                 jumpsMade++;
             }
         }
-        if (Input.GetButtonUp("Jump") && (isGrounded))
+        if (Input.GetButtonUp("Jump") && (!isGrounded) && velocity.y > 0)
         {
-            velocity.y = 0;
+            velocity.y /= 2;
         }
     }
 }
