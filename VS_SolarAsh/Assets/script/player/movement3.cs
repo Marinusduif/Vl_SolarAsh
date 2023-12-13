@@ -12,6 +12,8 @@ public class movement3 : MonoBehaviour
     [Header("turn settings")]
     [SerializeField] private float TurnSpeed = 0.1f;
     [SerializeField] private float TurnSpeedVelocity;
+    [Header("countermovement settings")]
+    [SerializeField] private float counterSpeed;
     [Header("references")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform cam;
@@ -78,6 +80,8 @@ public class movement3 : MonoBehaviour
                     momentum -= Time.deltaTime * decelerateSpeed;
                 }
             }
+
+
 
             Vector3 walkDir = Quaternion.Euler(0f, PlayerAngle, 0f) * Vector3.forward;
 
