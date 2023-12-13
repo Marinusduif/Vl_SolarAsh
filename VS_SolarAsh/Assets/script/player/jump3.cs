@@ -1,10 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class jump3 : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
     [SerializeField] private float grav = -9.81f;
-    [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundDistance = 0.4f;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpHeight = 3f;

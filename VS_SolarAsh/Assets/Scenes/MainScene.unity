@@ -956,10 +956,9 @@ GameObject:
   - component: {fileID: 598801931}
   - component: {fileID: 598801935}
   - component: {fileID: 598801934}
-  - component: {fileID: 598801933}
-  - component: {fileID: 598801932}
   - component: {fileID: 598801936}
   - component: {fileID: 598801937}
+  - component: {fileID: 598801938}
   m_Layer: 6
   m_Name: player
   m_TagString: Untagged
@@ -985,45 +984,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &598801932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598801930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65610e7833ba2694697f2229a8c68b97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterController: {fileID: 598801934}
-  grav: -10.63
-  groundCheck: {fileID: 512913384}
-  groundDistance: 1.5
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
-  jumpHeight: 2
-  isGrounded: 0
---- !u!114 &598801933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598801930}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a420abfe90d3fc45bc4cf1b5b001a0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 598801934}
-  virtualCamera: {fileID: 1793561589}
-  cam: {fileID: 378060361}
-  speed: 6
-  sprintMulti: 2
-  TurnSpeed: 0.1
 --- !u!143 &598801934
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1094,6 +1054,26 @@ MonoBehaviour:
   counterSpeed: 0
   controller: {fileID: 598801934}
   cam: {fileID: 378060361}
+--- !u!114 &598801938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598801930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a3ba6615b950c4c862e5c61cb2aad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 598801934}
+  grav: -9.81
+  groundDistance: 1.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
+  jumpHeight: 2.5
+  isGrounded: 0
 --- !u!1 &653242780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,7 +3348,7 @@ Transform:
   - {fileID: 1028690274}
   - {fileID: 1717729902}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1709135348 stripped
 GameObject:
