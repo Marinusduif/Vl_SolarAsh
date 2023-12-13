@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class AttackAniEvent : MonoBehaviour
 {
-
-    public static event Action<bool> attackEvent;
     // Start is called before the first frame update
+    public static event Action<int> attackEvent;
     void Start()
     {
 
@@ -16,10 +15,10 @@ public class AttackAniEvent : MonoBehaviour
     {
 
     }
-    public void TriggerAttack(bool toggle)
+
+    public void AttackHitState(int state)
     {
-        attackEvent?.Invoke(toggle);
 
+        attackEvent?.Invoke(state);
     }
-
 }

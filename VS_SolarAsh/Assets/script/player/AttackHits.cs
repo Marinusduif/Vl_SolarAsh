@@ -7,7 +7,7 @@ public class AttackHits : MonoBehaviour
 
     private void Start()
     {
-        Test.attackEvent += CheckHitState;
+        AttackAniEvent.attackEvent += CheckHitState;
     }
 
     private void OnTriggerEnter(Collider coll)

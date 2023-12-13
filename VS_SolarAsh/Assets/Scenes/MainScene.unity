@@ -243,6 +243,11 @@ PrefabInstance:
       propertyPath: hit
       value: 
       objectReference: {fileID: 566713429}
+    - target: {fileID: 5529174014201720056, guid: 94fe933cd8066184183b8aa80b5bc698,
+        type: 3}
+      propertyPath: goobAdd
+      value: 
+      objectReference: {fileID: 598801936}
     - target: {fileID: 5967474867730350207, guid: 94fe933cd8066184183b8aa80b5bc698,
         type: 3}
       propertyPath: m_RootOrder
@@ -915,19 +920,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetTag: Boxes
-  IsDestroyed: 0
---- !u!114 &566713430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566713423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c35f5b9ca86dd7459b9e0e5b38a94f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &566713431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,6 +933,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ani: {fileID: 566713428}
+--- !u!114 &566713432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566713423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39634f66e4dddc44585c2b8b25f74bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &598801930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2d19076ec0d4b4d87eb34a6555cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goopAmount: 0
   GoopCount: {fileID: 1243693680}
 --- !u!1 &653242780
 GameObject:
@@ -3171,11 +3176,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d32e8de2e56b9c49b9cd519a6683a52,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 566713430}
+      addedObject: {fileID: 566713429}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d32e8de2e56b9c49b9cd519a6683a52,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 566713429}
+      addedObject: {fileID: 566713432}
     - targetCorrespondingSourceObject: {fileID: -290750445479886849, guid: 7d32e8de2e56b9c49b9cd519a6683a52,
         type: 3}
       insertIndex: -1
