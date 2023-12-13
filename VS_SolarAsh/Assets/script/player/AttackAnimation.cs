@@ -3,16 +3,15 @@
 public class AttackAnimation : MonoBehaviour
 {
     [SerializeField] private Animator ani;
-
-    private void Start()
+    void Start()
     {
         ani = GetComponent<Animator>();
     }
 
     private void Update()
     {
-
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        ani.SetTrigger("Idle");
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ani.SetTrigger("Attack");
         }
@@ -25,4 +24,5 @@ public class AttackAnimation : MonoBehaviour
             ani.SetTrigger("Idle");
         }
     }
+
 }

@@ -2,13 +2,31 @@
 
 public class AttackHits : MonoBehaviour
 {
-    [SerializeField] private string targetTag;
+    [SerializeField] private string TargetTag;
+    private bool canHit = false;
 
-    private void OnTriggerEnter(Collider other)
+
+    private void Start()
     {
-        if (other.gameObject.tag == targetTag)
+        Test.attackEvent += CheckHitState;
+    }
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == TargetTag && canHit)
         {
-            Destroy(other.gameObject);
+            Destroy(coll.gameObject);
+        }
+    }
+
+    private void CheckHitState(int state)
+    {
+        if (state == 1)
+        {
+            canHit = true;
+        }
+        else
+        {
+            canHit = false;
         }
     }
 }
