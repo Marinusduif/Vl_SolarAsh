@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GoopCollect : MonoBehaviour
 {
-    private int goopAmount;
+    public int goopAmount;
 
     public TextMeshProUGUI GoopCount;
 
