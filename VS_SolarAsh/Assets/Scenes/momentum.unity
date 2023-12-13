@@ -2786,6 +2786,7 @@ GameObject:
   - component: {fileID: 463257427}
   - component: {fileID: 463257426}
   - component: {fileID: 463257429}
+  - component: {fileID: 463257430}
   m_Layer: 6
   m_Name: player
   m_TagString: Untagged
@@ -2826,12 +2827,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463257419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a420abfe90d3fc45bc4cf1b5b001a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 463257427}
+  virtualCamera: {fileID: 0}
   cam: {fileID: 545132814}
   speed: 6
   sprintMulti: 2
@@ -2875,14 +2877,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 463257427}
-  grav: -9.81
-  groundCheck: {fileID: 0}
-  groundDistance: 1.4
+  grav: -10.63
+  groundCheck: {fileID: 469399828}
+  groundDistance: 1.5
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  jumpHeight: 2.5
+  jumpHeight: 2
   isGrounded: 0
+--- !u!114 &463257430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463257419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2e6e5378ec6ff49a2e7556a00a915c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momentum: 0
+  maxWalkSpeed: 7
+  maxSkateSpeed: 15
+  decelerateSpeed: 10
+  accelerateSpeed: 5
+  TurnSpeed: 0.1
+  TurnSpeedVelocity: 0
+  counterSpeed: 0
+  controller: {fileID: 463257427}
+  cam: {fileID: 545132814}
 --- !u!1001 &464069241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4795,7 +4819,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687509877}
-  m_LocalRotation: {x: 0.051200658, y: -9.869076e-10, z: 5.059667e-11, w: 0.9986884}
+  m_LocalRotation: {x: 0.051200654, y: 0.0000000065190644, z: -3.342187e-10, w: 0.9986884}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
