@@ -493,7 +493,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344589045}
-  m_LocalRotation: {x: 0.066326156, y: 0.00660127, z: -0.0004388128, w: 0.9977761}
+  m_LocalRotation: {x: 0.06632616, y: 0.00660127, z: -0.0004388129, w: 0.9977761}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -959,6 +959,7 @@ GameObject:
   - component: {fileID: 598801933}
   - component: {fileID: 598801932}
   - component: {fileID: 598801936}
+  - component: {fileID: 598801937}
   m_Layer: 6
   m_Name: player
   m_TagString: Untagged
@@ -1012,7 +1013,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598801930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a420abfe90d3fc45bc4cf1b5b001a0f, type: 3}
   m_Name: 
@@ -1071,6 +1072,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goopAmount: 0
   GoopCount: {fileID: 1243693680}
+--- !u!114 &598801937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598801930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2e6e5378ec6ff49a2e7556a00a915c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momentum: 0
+  maxWalkSpeed: 7
+  maxSkateSpeed: 15
+  decelerateSpeed: 10
+  accelerateSpeed: 5
+  TurnSpeed: 0.1
+  TurnSpeedVelocity: 0
+  counterSpeed: 0
+  controller: {fileID: 598801934}
+  cam: {fileID: 378060361}
 --- !u!1 &653242780
 GameObject:
   m_ObjectHideFlags: 0
