@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class jump2 : MonoBehaviour
@@ -11,7 +10,7 @@ public class jump2 : MonoBehaviour
     [SerializeField] private int jumps;
     [SerializeField] private float downVel;
     [SerializeField] private bool jumping;
-    [SerializeField]private bool onGround;
+    [SerializeField] private bool onGround;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -30,10 +29,10 @@ public class jump2 : MonoBehaviour
             downVel -= Time.deltaTime * gravity;
         }
 
-        if (onGround) 
+        if (onGround)
         {
             jumps = 2;
-        } 
+        }
         else if (!jumping || jumps > 1)
         {
             downVel = -0.5f;

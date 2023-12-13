@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class jump2 : MonoBehaviour
+public class jump3 : MonoBehaviour
 {
     CharacterController controller;
     [SerializeField] private float gravity = 9.807f;
@@ -10,6 +10,7 @@ public class jump2 : MonoBehaviour
     [SerializeField] private int jumps;
     [SerializeField] private float downVel;
     [SerializeField] private bool jumping;
+    [SerializeField] private bool stopJump;
     [SerializeField] private bool onGround;
     void Start()
     {
@@ -24,7 +25,7 @@ public class jump2 : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
 
-        if (!onGround)
+        if (!onGround && !jumping)
         {
             downVel -= Time.deltaTime * gravity;
         }
@@ -43,12 +44,21 @@ public class jump2 : MonoBehaviour
                 StartCoroutine(Jump());
             }
         }
+        if (jumping)
+        {
+            if (Input.GetKeyUp(KeyCode.Space) || !stopJump)
+            {
+                downVel = 0;
+            }
+        }
         controller.Move(transform.up * downVel);
     }
     private IEnumerator Jump()
     {
         jumping = true;
         yield return new WaitForSeconds(0.5f);
+        stopJump = true;
+        yield return new WaitForEndOfFrame();
         jumping = false;
     }
 }

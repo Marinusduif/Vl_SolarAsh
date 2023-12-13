@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class jump : MonoBehaviour
@@ -15,7 +13,7 @@ public class jump : MonoBehaviour
 
     void Update()
     {
-        if(jumps > 0 && Input.GetKeyDown(KeyCode.Space))
+        if (jumps > 0 && Input.GetKeyDown(KeyCode.Space))
         {
             if (jumps == 2)
             {
@@ -32,7 +30,7 @@ public class jump : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "floor")
+        if (collision.gameObject.tag == "floor")
         {
             jumps = 2;
         }
