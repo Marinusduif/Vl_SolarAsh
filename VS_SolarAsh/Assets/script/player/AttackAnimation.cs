@@ -16,6 +16,12 @@ public class AttackAnimation : MonoBehaviour
         {
             ani.SetTrigger("Attack");
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            resetBools();
+            ani.SetTrigger("Jump");
+            ani.SetFloat("Speed", 0.5f);
+        }
         else if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             resetBools();
@@ -28,6 +34,7 @@ public class AttackAnimation : MonoBehaviour
             ani.SetFloat("Speed", 1f);
             ani.SetBool("Sprinting", true);
         }
+
         else
         {
             resetBools();
