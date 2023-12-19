@@ -3,26 +3,38 @@
 public class AttackAnimation : MonoBehaviour
 {
     [SerializeField] private Animator ani;
-    void Start()
+
+    private void Start()
     {
         ani = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        ani.SetTrigger("Idle");
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ani.SetTrigger("Attack");
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.LeftShift))
         {
-            ani.SetTrigger("Walking");
+            resetBools();
+            ani.SetBool("Walking", true);
+        }
+        else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            resetBools();
+            ani.SetBool("Sprinting", true);
         }
         else
         {
             ani.SetTrigger("Idle");
+            resetBools();
         }
     }
 
+    private void resetBools()
+    {
+        ani.SetBool("Sprinting", false);
+        ani.SetBool("Walking", false);
+    }
 }
