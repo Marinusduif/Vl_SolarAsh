@@ -14,8 +14,8 @@ public class AttackHits : MonoBehaviour
     {
         if (coll.gameObject.tag == TargetTag && canHit)
         {
-            coll.gameObject.GetComponent<GoopOutOfBox>().ExplodeGloobs();
             Destroy(coll.gameObject);
+            coll.gameObject.GetComponent<GoopOutOfBox>().ExplodeGloobs();
         }
     }
 

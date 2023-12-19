@@ -13,27 +13,28 @@ public class AttackAnimation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ani.SetTrigger("Attack");
-            ani.SetBool("Sprinting", false);
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.LeftShift))
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.LeftShift))
         {
+            resetBools();
             ani.SetBool("Walking", true);
-            ani.SetTrigger("Walking1");
-            ani.SetBool("Sprinting", false);
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+        else if (Input.GetKey(KeyCode.LeftShift))
         {
+            resetBools();
             ani.SetBool("Sprinting", true);
-            ani.SetBool("Walking", false);
-            ani.SetBool("Walking2", false);
         }
         else
         {
             ani.SetTrigger("Idle");
-            ani.SetBool("Sprinting", false);
-            ani.SetBool("Walking", false);
-            ani.SetBool("Walking2", false);
+            resetBools();
         }
+    }
+
+    private void resetBools()
+    {
+        ani.SetBool("Sprinting", false);
+        ani.SetBool("Walking", false);
     }
 
 }
