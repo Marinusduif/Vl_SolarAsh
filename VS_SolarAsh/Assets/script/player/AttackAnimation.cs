@@ -11,24 +11,28 @@ public class AttackAnimation : MonoBehaviour
 
     private void Update()
     {
+        ani.SetFloat("Speed", 0f);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ani.SetTrigger("Attack");
         }
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.LeftShift))
+        else if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             resetBools();
+            ani.SetFloat("Speed", 0.5f);
             ani.SetBool("Walking", true);
         }
         else if (Input.GetKey(KeyCode.LeftShift))
         {
             resetBools();
+            ani.SetFloat("Speed", 1f);
             ani.SetBool("Sprinting", true);
         }
         else
         {
-            ani.SetTrigger("Idle");
             resetBools();
+            ani.SetFloat("Speed", 0f);
+            ani.SetTrigger("Idle");
         }
     }
 
@@ -36,5 +40,6 @@ public class AttackAnimation : MonoBehaviour
     {
         ani.SetBool("Sprinting", false);
         ani.SetBool("Walking", false);
+        ani.SetFloat("Speed", 0f);
     }
 }
