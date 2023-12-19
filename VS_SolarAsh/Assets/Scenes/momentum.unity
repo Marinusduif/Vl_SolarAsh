@@ -2833,6 +2833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 463257427}
+  virtualCamera: {fileID: 0}
   cam: {fileID: 545132814}
   speed: 6
   sprintMulti: 2
@@ -2872,7 +2873,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 463257419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65610e7833ba2694697f2229a8c68b97, type: 3}
+  m_Script: {fileID: 11500000, guid: 46a3ba6615b950c4c862e5c61cb2aad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 463257427}
@@ -2898,11 +2899,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   momentum: 0
   maxWalkSpeed: 7
-  maxSkateSpeed: 10
+  maxSkateSpeed: 15
   decelerateSpeed: 10
   accelerateSpeed: 5
   TurnSpeed: 0.1
   TurnSpeedVelocity: 0
+  counterSpeed: 0
   controller: {fileID: 463257427}
   cam: {fileID: 545132814}
 --- !u!1001 &464069241
@@ -4817,7 +4819,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687509877}
-  m_LocalRotation: {x: 0.051200658, y: -9.869076e-10, z: 5.059667e-11, w: 0.9986884}
+  m_LocalRotation: {x: 0.051200654, y: 0.0000000065190644, z: -3.342187e-10, w: 0.9986884}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5660,7 +5662,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831235874}
-  m_LocalRotation: {x: 0.10848954, y: -0.000000021235405, z: 0.0000000023174982, w: 0.9940976}
+  m_LocalRotation: {x: 0.108489566, y: 0.000000015215475, z: -0.0000000016605212,
+    w: 0.9940976}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
