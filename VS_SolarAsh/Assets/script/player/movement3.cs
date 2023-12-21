@@ -20,6 +20,7 @@ public class movement3 : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform cam;
     bool dashing;
+    bool canDash = true;
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -83,7 +84,13 @@ public class movement3 : MonoBehaviour
                     momentum -= Time.deltaTime * decelerateSpeed;
                 }
             }
-            if(Input.GetMouseButtonDown(1)){
+            if(Input.GetMouseButtonDown(1) && canDash){
+                momentum = dashPower;
+                canDash = false;
+                dashing = true;
+                StartCoroutine(dashDelay());
+            }
+            if(dashing){
                 momentum = dashPower;
             }
 
@@ -97,5 +104,11 @@ public class movement3 : MonoBehaviour
 
 
         }
+    }
+    IEnumerator dashDelay(){
+        yield return new WaitForSeconds(1);
+        dashing = false;
+        yield return new WaitForSeconds(0.5f);
+        canDash = true;
     }
 }
