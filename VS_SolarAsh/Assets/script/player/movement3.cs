@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class movement3 : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class movement3 : MonoBehaviour
     [Header("speed settings")]
     [SerializeField] private float maxWalkSpeed;
     [SerializeField] private float maxSkateSpeed;
+    [SerializeField] private float dashPower;
     [Header("acceleration settings")]
     [SerializeField] private float decelerateSpeed;
     [SerializeField] private float accelerateSpeed;
@@ -17,6 +19,8 @@ public class movement3 : MonoBehaviour
     [Header("references")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform cam;
+    bool dashing;
+    bool canDash = true;
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -80,6 +84,15 @@ public class movement3 : MonoBehaviour
                     momentum -= Time.deltaTime * decelerateSpeed;
                 }
             }
+            if(Input.GetMouseButtonDown(1) && canDash){
+                momentum = dashPower;
+                canDash = false;
+                dashing = true;
+                StartCoroutine(dashDelay());
+            }
+            if(dashing){
+                momentum = dashPower;
+            }
 
 
 
@@ -91,5 +104,11 @@ public class movement3 : MonoBehaviour
 
 
         }
+    }
+    IEnumerator dashDelay(){
+        yield return new WaitForSeconds(1);
+        dashing = false;
+        yield return new WaitForSeconds(0.5f);
+        canDash = true;
     }
 }
