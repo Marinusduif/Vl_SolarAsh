@@ -18,9 +18,7 @@ public class AttackAnimation : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            resetBools();
             ani.SetTrigger("Jump");
-            ani.SetFloat("Speed", 0.5f);
         }
         else if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
@@ -34,11 +32,9 @@ public class AttackAnimation : MonoBehaviour
             ani.SetFloat("Speed", 1f);
             ani.SetBool("Sprinting", true);
         }
-
         else
         {
             resetBools();
-            ani.SetFloat("Speed", 0f);
             ani.SetTrigger("Idle");
         }
     }
@@ -48,5 +44,7 @@ public class AttackAnimation : MonoBehaviour
         ani.SetBool("Sprinting", false);
         ani.SetBool("Walking", false);
         ani.SetFloat("Speed", 0f);
+        ani.ResetTrigger("Jump");
+        ani.ResetTrigger("Idle");
     }
 }
