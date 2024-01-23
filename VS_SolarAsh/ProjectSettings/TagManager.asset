@@ -8,6 +8,7 @@ TagManager:
   - Boxes
   - Goop
   - Ledge
+  - rail
   layers:
   - Default
   - TransparentFX
@@ -17,6 +18,7 @@ TagManager:
   - UI
   - Player
   - Ground
+  - rail
   - 
   - 
   - 
