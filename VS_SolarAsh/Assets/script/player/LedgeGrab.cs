@@ -13,7 +13,6 @@ public class LedgeGrab : MonoBehaviour
     {
         if (coll.gameObject.tag == targetTag)
         {
-
             ani.SetTrigger("Climb");
         }
     }
