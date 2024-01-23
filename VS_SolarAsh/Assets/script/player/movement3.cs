@@ -19,10 +19,12 @@ public class movement3 : MonoBehaviour
     [Header("references")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform cam;
+    [SerializeField] private Grind grind;
     bool dashing;
     bool canDash = true;
     void Update()
     {
+        if(!grind.grinding){
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -102,7 +104,7 @@ public class movement3 : MonoBehaviour
 
             else controller.Move(walkDir.normalized * momentum * Time.deltaTime);
 
-
+        }
         }
     }
     IEnumerator dashDelay(){
