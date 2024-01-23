@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 6470f8cf1bdd9764e8d2ebac94c382aa, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 27f00433803978a40b0149032a8f7842, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 16.52
@@ -920,7 +920,7 @@ Camera:
   m_GameObject: {fileID: 378060360}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.25511748, g: 0.8584906, b: 0.7421778, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1326,6 +1326,7 @@ MonoBehaviour:
   counterSpeed: 0
   controller: {fileID: 598801934}
   cam: {fileID: 378060361}
+  grind: {fileID: 0}
 --- !u!114 &598801938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1346,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   jumpHeight: 2.5
+  grind: {fileID: 0}
   isGrounded: 0
 --- !u!1 &653242780
 GameObject:
