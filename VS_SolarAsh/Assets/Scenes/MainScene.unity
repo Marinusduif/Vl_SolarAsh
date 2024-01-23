@@ -194,7 +194,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47606095}
-  m_LocalRotation: {x: 0.075686954, y: -0.0004789465, z: 0.00003635428, w: 0.9971315}
+  m_LocalRotation: {x: 0.075686954, y: -0.00047891217, z: 0.000036351677, w: 0.9971315}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -465,7 +465,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184506192}
-  m_LocalRotation: {x: 0.104404286, y: -0.00047771176, z: 0.00005014923, w: 0.99453485}
+  m_LocalRotation: {x: 0.10440431, y: -0.00047768114, z: 0.000050146024, w: 0.99453485}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -759,7 +759,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344589045}
-  m_LocalRotation: {x: 0.047097027, y: -0.00047977618, z: 0.000022621134, w: 0.9988902}
+  m_LocalRotation: {x: 0.047097027, y: -0.00047977187, z: 0.000022620934, w: 0.9988902}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -817,7 +817,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378060360}
-  m_LocalRotation: {x: 0.07568696, y: -0.00047896363, z: 0.00003635558, w: 0.9971315}
+  m_LocalRotation: {x: 0.07568696, y: -0.000478895, z: 0.000036350375, w: 0.9971315}
   m_LocalPosition: {x: -0.13177, y: 11.1168995, z: -6.58303}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1231,6 +1231,7 @@ GameObject:
   - component: {fileID: 598801936}
   - component: {fileID: 598801937}
   - component: {fileID: 598801938}
+  - component: {fileID: 598801939}
   m_Layer: 6
   m_Name: player
   m_TagString: Untagged
@@ -1326,7 +1327,7 @@ MonoBehaviour:
   counterSpeed: 0
   controller: {fileID: 598801934}
   cam: {fileID: 378060361}
-  grind: {fileID: 0}
+  grind: {fileID: 598801939}
 --- !u!114 &598801938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,8 +1347,29 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   jumpHeight: 2.5
-  grind: {fileID: 0}
+  grind: {fileID: 598801939}
   isGrounded: 0
+--- !u!114 &598801939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598801930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a91538621dca84ea93052abeeb70ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 0}
+  start: 0
+  points: {fileID: 0}
+  speed: 1
+  nextWaypointIndex: 1
+  reachedWaypointClearance: 0.25
+  forward: 0
+  grinding: 0
+  closest: 0
 --- !u!1 &653242780
 GameObject:
   m_ObjectHideFlags: 0
