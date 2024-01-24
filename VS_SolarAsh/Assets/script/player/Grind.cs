@@ -25,7 +25,7 @@ public class Grind : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && grinding)
         {
             StartCoroutine(stopGrinding());
         }
@@ -42,8 +42,7 @@ public class Grind : MonoBehaviour
     void moveForward()
     {
         transform.position = Vector3.MoveTowards(transform.position, points.rail[nextWaypointIndex] + Vector3.up * 1.44f, Time.deltaTime * speed);
-        Vector3 direction = Vector3.Normalize(transform.position - points.rail[nextWaypointIndex]);
-        transform.rotation =  Quaternion.Euler(new Vector3(0, Mathf.Atan2(direction.x,direction.y),0));
+        transform.LookAt(points.rail[nextWaypointIndex]+ Vector3.up * 1.44f);
         if(Vector3.Distance(transform.position, points.rail[nextWaypointIndex] + Vector3.up * 1.44f) <= reachedWaypointClearance && forward && nextWaypointIndex < points.rail.Length)
         {
             nextWaypointIndex++;
@@ -56,9 +55,8 @@ public class Grind : MonoBehaviour
     
     void moveBackwards()
     {
-        Vector3 direction = Vector3.Normalize(transform.position - points.rail[nextWaypointIndex]);
         transform.position = Vector3.MoveTowards(transform.position, points.rail[nextWaypointIndex] + Vector3.up * 1.44f, Time.deltaTime * speed);
-        transform.rotation =  Quaternion.Euler(new Vector3(0,-Mathf.Atan2(direction.y,direction.x),0));
+        transform.LookAt(points.rail[nextWaypointIndex]+ Vector3.up * 1.44f);
         if(Vector3.Distance(transform.position, points.rail[nextWaypointIndex] + Vector3.up * 1.44f) <= reachedWaypointClearance && !forward && nextWaypointIndex > -1)
         {
             nextWaypointIndex--;
