@@ -15,11 +15,11 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.38679248, g: 0.38460308, b: 0.38460308, a: 1}
+  m_FogColor: {r: 0.35991457, g: 0.54226655, b: 0.5660378, a: 1}
   m_FogMode: 1
   m_FogDensity: 1
-  m_LinearFogStart: 0.04
-  m_LinearFogEnd: 303.06
+  m_LinearFogStart: 2.05
+  m_LinearFogEnd: 500
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -2749,10 +2749,10 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.636
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 2.79

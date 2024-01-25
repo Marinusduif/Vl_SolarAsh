@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: eilandjes
-  m_Shader: {fileID: -6465566751694194690, guid: 0d589015268c0ec439d9c48f3b97fa8e,
+  m_Shader: {fileID: -6465566751694194690, guid: 17d776c611acdcc46b670c512183349c,
     type: 3}
   m_Parent: {fileID: 2100000, guid: acb6d0208345ff54ba8a34dd29b51cec, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -28,10 +28,14 @@ Material:
     m_Floats:
     - _Metallic: 0.364
     - _QueueControl: 0
+    - _Shades: 0.55
     - _Smoothness: 0.232
+    - _max: 0.9
+    - _min: 0.1
     m_Colors:
     - _BaseColor: {r: 0.88511384, g: 0.8867924, b: 0.56386614, a: 1}
     - _Color: {r: 0.88511384, g: 0.8867924, b: 0.5638661, a: 1}
+    - _color: {r: 0.8773585, g: 0.85320747, b: 0.65719116, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2006700891063954445
 MonoBehaviour:
