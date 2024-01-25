@@ -117,14 +117,14 @@ Material:
     - _rippleSlim: 2.41
     - _rippledense: 1.56
     - _ripplespeed: 0.1
-    - _spotamouth: 10
+    - _spotamouth: 41.46
     m_Colors:
     - _BaseColor: {r: 0.15977214, g: 0.6415094, b: 0.3033168, a: 1}
     - _Color: {r: 0.1597721, g: 0.6415094, b: 0.30331677, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _rippleColor: {r: 0.070221394, g: 0.11320752, b: 0.049554985, a: 0}
-    - _watercolor: {r: 0.23921569, g: 0.5647059, b: 0.39215687, a: 0}
+    - _watercolor: {r: 0.13414025, g: 0.4528302, b: 0.35529193, a: 0}
     - _watetspots: {r: 0.2354946, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5176816421993774780
