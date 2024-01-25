@@ -8,6 +8,7 @@ public class jump3 : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpHeight = 3f;
     [SerializeField] private Grind grind;
+    [SerializeField] private LedgeGrab grab;
     [SerializeField] private bool isGrounded;
     int jumpsMade = 0;
 
@@ -22,12 +23,12 @@ public class jump3 : MonoBehaviour
             velocity.y = -5f;
             jumpsMade = 0; // Reset jumps when grounded
         }
-        if(!grind.grinding)
+        if (!grind.grinding && !grab.grabbing)
         {
             velocity.y += grav * Time.deltaTime;
             characterController.Move(velocity * Time.deltaTime);
         }
-        
+
 
         if (Input.GetButtonDown("Jump") && (isGrounded || jumpsMade < 1))
         {
