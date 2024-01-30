@@ -3,6 +3,7 @@
 public class AttackAnimation : MonoBehaviour
 {
     [SerializeField] private Animator ani;
+    private bool jumping = false;
 
     private void Start()
     {
@@ -18,7 +19,13 @@ public class AttackAnimation : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            ani.SetTrigger("Jump");
+            ani.SetBool("Jump", true);
+            jumping = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && jumping == true)
+        {
+            ani.SetTrigger("doubleJump");
+            resetBools();
         }
         else if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
@@ -43,8 +50,9 @@ public class AttackAnimation : MonoBehaviour
     {
         ani.SetBool("Sprinting", false);
         ani.SetBool("Walking", false);
+        ani.SetBool("Jump", false);
         ani.SetFloat("Speed", 0f);
-        ani.ResetTrigger("Jump");
         ani.ResetTrigger("Idle");
+        jumping = false;
     }
 }
