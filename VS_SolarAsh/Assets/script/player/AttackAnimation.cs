@@ -3,11 +3,12 @@
 public class AttackAnimation : MonoBehaviour
 {
     [SerializeField] private Animator ani;
-    private bool jumping = false;
+    [SerializeField] private jump3 jumping;
 
     private void Start()
     {
         ani = GetComponent<Animator>();
+        jumping = GetComponent<jump3>();
     }
 
     private void Update()
@@ -17,12 +18,11 @@ public class AttackAnimation : MonoBehaviour
         {
             ani.SetTrigger("Attack");
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space) && jumping.isGrounded)
         {
-            ani.SetBool("Jump", true);
-            jumping = true;
+            ani.SetTrigger("Jump");
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && jumping == true)
+        else if (Input.GetKeyDown(KeyCode.Space) && !jumping.isGrounded)
         {
             ani.SetTrigger("doubleJump");
             resetBools();
@@ -50,9 +50,9 @@ public class AttackAnimation : MonoBehaviour
     {
         ani.SetBool("Sprinting", false);
         ani.SetBool("Walking", false);
-        ani.SetBool("Jump", false);
+        ani.ResetTrigger("Jump");
         ani.SetFloat("Speed", 0f);
         ani.ResetTrigger("Idle");
-        jumping = false;
+        ani.ResetTrigger("doubleJump");
     }
 }

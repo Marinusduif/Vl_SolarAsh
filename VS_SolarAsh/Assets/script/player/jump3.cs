@@ -9,7 +9,7 @@ public class jump3 : MonoBehaviour
     [SerializeField] private float jumpHeight = 3f;
     [SerializeField] private Grind grind;
     [SerializeField] private LedgeGrab grab;
-    [SerializeField] private bool isGrounded;
+    public bool isGrounded;
     int jumpsMade = 0;
 
     Vector3 velocity;
