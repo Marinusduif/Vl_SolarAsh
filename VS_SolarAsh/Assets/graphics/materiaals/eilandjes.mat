@@ -117,8 +117,8 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _lightingCutOF: 0
-    - _shadow_Brigtness: 0.21
+    - _lightingCutOF: 0.285
+    - _shadow_Brigtness: 0.52
     m_Colors:
     - _BaseColor: {r: 0.88511384, g: 0.8867924, b: 0.56386614, a: 1}
     - _Color: {r: 0.9150943, g: 0.76111424, b: 0.54732996, a: 1}
