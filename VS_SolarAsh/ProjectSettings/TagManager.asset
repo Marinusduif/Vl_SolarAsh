@@ -9,6 +9,8 @@ TagManager:
   - Goop
   - Ledge
   - rail
+  - punch
+  - plant
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,6 @@ TagManager:
   - Player
   - Ground
   - rail
-  - 
   - 
   - 
   - 

@@ -2084,6 +2084,7 @@ MonoBehaviour:
     m_Bits: 8
   jumpHeight: 2.5
   grind: {fileID: 1164815578}
+  grab: {fileID: 0}
   isGrounded: 0
 --- !u!114 &1164815571
 MonoBehaviour:

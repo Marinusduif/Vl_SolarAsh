@@ -12,7 +12,11 @@ public class points : MonoBehaviour
 
     void Update()
     {
-        for(int i = 0; i < rail.Length; i++){
+        
+    }
+
+    void OnDrawGizmos() {
+for(int i = 0; i < rail.Length; i++){
             if(i>0){
             Debug.DrawRay(rail[i-1], rail[i] - rail[i-1], Color.yellow);
             }
