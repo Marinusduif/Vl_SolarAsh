@@ -33,7 +33,7 @@ we hebben afspraken gemaakt maar niet ergens opgesteld.
 ### Product 7: "Je leert je werk communiceren met anderedisciplines & achtergronden. Je leert jezelf te omschrijven & presenteren op een objectieve manier."
 
 we hebben elke dag stand-ups gedaan en na elke sprint een retrospective of wat er nog gedaan moest worden in de volgende sprint.
-
+https://github.com/Marinusduif/Vl_SolarAsh/blob/develop/ReadmeImg/IvoSprintReview.png
 
 ### Product 8: "Je kunt werk realiseren en opleveren volgens een DoD"
 
