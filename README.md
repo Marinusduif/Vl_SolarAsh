@@ -20,6 +20,9 @@ Ik heb een Visual sheet gemaakt voor mijn vorige project (towerdefense).
 
 ### Product 4: "Je kunt jouw en andermans geprogrammeerde game mechanics naar een volgend niveau tillen, door deze aan te passen met oog op visuele polish, game-feel en playability"
 
+Ik heb de animaties in de editor gezet en de ook een paar van de mechanics van de game gemaakt.
+
+
 ### Product 5: "Je kunt de structuur van je toekomstige code van te voren in kaartbrengen met behulpvan een class diagram."
 
 ### Product 6: "Je kunt je eigen code- en versiebeheerconventies opstellen met voorbeelden. zodat iedere deelnemer aan een project zich aan de gemaakte afspraken binnen deze processen kan houden."
