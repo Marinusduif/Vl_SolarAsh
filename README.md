@@ -15,7 +15,7 @@ Toen ik voor het **GoopOutOfBox** script de colliders wou laten werken moest ik 
 ### Product 3: "Je leert omgaan met adobe pakketten als photoshop, en kunt deze basis gebruiken voor o.a. vormgeven van visuele sheets en/of textures."
 
 Ik heb een Visual sheet gemaakt voor mijn vorige project (towerdefense).
-![Foto van de visual sheet](<Screenshot 2023-12-04 101145.png>)
+[foto van de visiual sheet](ReadmeImg/Screenshot 2023-12-04 101145.png)
 
 ### Product 4: "Je kunt jouw en andermans geprogrammeerde game mechanics naar een volgend niveau tillen, door deze aan te passen met oog op visuele polish, game-feel en playability"
 
