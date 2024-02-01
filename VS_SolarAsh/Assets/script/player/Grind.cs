@@ -68,7 +68,7 @@ public class Grind : MonoBehaviour
     }
     void OnTriggerStay(Collider collider)
     {
-        Debug.Log("col");
+        Debug.Log("col" + collider.gameObject.tag);
         if(collider.gameObject.tag == "rail" && Input.GetKey(KeyCode.LeftShift) && !grinding && canGrind)
         {
             for(int i = 0;i < points.rail.Length; i++)
