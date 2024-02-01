@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class GoopOutOfBox : MonoBehaviour
+public class GoopOutOfBox : GoopCollect
 {
     [SerializeField] private GameObject goob = null;
-    [SerializeField] private GoopCollect goobAdd;
+
 
     private void Start()
     {
@@ -12,7 +12,7 @@ public class GoopOutOfBox : MonoBehaviour
 
     public void ExplodeGloobs()
     {
-        goobAdd.goopAmount += 9;
-        goobAdd.GoopCount.text = goobAdd.goopAmount.ToString();
+        goopAmount += 9;
+        GoopCount.text = goopAmount.ToString();
     }
 }

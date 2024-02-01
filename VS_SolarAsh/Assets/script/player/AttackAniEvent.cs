@@ -18,7 +18,6 @@ public class AttackAniEvent : MonoBehaviour
 
     public void AttackHitState(int state)
     {
-
         attackEvent?.Invoke(state);
     }
 }
